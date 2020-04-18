@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="Database1Model.Clients">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Buissnes_Priority" ColumnName="Buissnes Priority" />
+          <ScalarProperty Name="factory_occupation_id" ColumnName="factory_occupation_id" />
+          <ScalarProperty Name="company_id" ColumnName="company_id" />
+          <ScalarProperty Name="Id_Clients" ColumnName="Id_Clients" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company">
+      <EntityTypeMapping TypeName="Database1Model.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="company_country" ColumnName="company_country" />
+          <ScalarProperty Name="compnay_name" ColumnName="compnay_name" />
+          <ScalarProperty Name="Id_Company" ColumnName="Id_Company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employee">
+      <EntityTypeMapping TypeName="Database1Model.employee">
+        <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="postal_code_id" ColumnName="postal_code_id" />
+          <ScalarProperty Name="employee_type_id" ColumnName="employee_type_id" />
+          <ScalarProperty Name="Gender_Id" ColumnName="Gender_Id" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_number" ColumnName="id_number" />
+          <ScalarProperty Name="Id_Employee" ColumnName="Id_Employee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employee_type">
+      <EntityTypeMapping TypeName="Database1Model.employee_type">
+        <MappingFragment StoreEntitySet="employee_type">
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="Id_Employee_Type" ColumnName="Id_Employee_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expends_Report">
+      <EntityTypeMapping TypeName="Database1Model.Expends_Report">
+        <MappingFragment StoreEntitySet="Expends_Report">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="expends_type_id" ColumnName="expends_type_id" />
+          <ScalarProperty Name="Id_Expends_Report" ColumnName="Id_Expends_Report" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expends_Type">
+      <EntityTypeMapping TypeName="Database1Model.Expends_Type">
+        <MappingFragment StoreEntitySet="Expends_Type">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Id_Expends_Type" ColumnName="Id_Expends_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Factory_Occupation">
+      <EntityTypeMapping TypeName="Database1Model.Factory_Occupation">
+        <MappingFragment StoreEntitySet="Factory_Occupation">
+          <ScalarProperty Name="factory_occupation_name" ColumnName="factory_occupation_name" />
+          <ScalarProperty Name="Id_Factory_Occupation" ColumnName="Id_Factory_Occupation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Machines">
+      <EntityTypeMapping TypeName="Database1Model.Machines">
+        <MappingFragment StoreEntitySet="Machines">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="work_shifts_id" ColumnName="work_shifts_id" />
+          <ScalarProperty Name="Manufacture_Department" ColumnName="Manufacture_Department" />
+          <ScalarProperty Name="kind" ColumnName="kind" />
+          <ScalarProperty Name="Id_Machines" ColumnName="Id_Machines" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Details">
+      <EntityTypeMapping TypeName="Database1Model.Order_Details">
+        <MappingFragment StoreEntitySet="Order Details">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="products_id" ColumnName="products_id" />
+          <ScalarProperty Name="production_amount" ColumnName="production amount" />
+          <ScalarProperty Name="Machines_Id" ColumnName="Machines_Id" />
+          <ScalarProperty Name="Delivery_Date" ColumnName="Delivery Date" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order Date" />
+          <ScalarProperty Name="Id_Order_Details" ColumnName="Id_Order_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="Database1Model.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="order_details_id" ColumnName="order details_id" />
+          <ScalarProperty Name="Id_Orders" ColumnName="Id_Orders" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Postal_Code_Worker">
+      <EntityTypeMapping TypeName="Database1Model.Postal_Code_Worker">
+        <MappingFragment StoreEntitySet="Postal_Code_Worker">
+          <ScalarProperty Name="house_number" ColumnName="house_number" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="Id_Postal_Code_Worker" ColumnName="Id_Postal_Code_Worker" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="Database1Model.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Id_Products" ColumnName="Id_Products" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provided_Products">
+      <EntityTypeMapping TypeName="Database1Model.Provided_Products">
+        <MappingFragment StoreEntitySet="Provided_Products">
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="Id_Provided_Products" ColumnName="Id_Provided_Products" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provider_Details">
+      <EntityTypeMapping TypeName="Database1Model.Provider_Details">
+        <MappingFragment StoreEntitySet="Provider_Details">
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="provider_name_id" ColumnName="provider_name_id" />
+          <ScalarProperty Name="provided_products_id" ColumnName="provided_products_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="providing_date" ColumnName="providing_date" />
+          <ScalarProperty Name="quantity_items" ColumnName="quantity_items" />
+          <ScalarProperty Name="Id_Provider_Details" ColumnName="Id_Provider_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provider_Name">
+      <EntityTypeMapping TypeName="Database1Model.Provider_Name">
+        <MappingFragment StoreEntitySet="Provider_Name">
+          <ScalarProperty Name="provider_name1" ColumnName="provider_name" />
+          <ScalarProperty Name="Id_Provider_Name" ColumnName="Id_Provider_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Work_Shifts">
+      <EntityTypeMapping TypeName="Database1Model.Work_Shifts">
+        <MappingFragment StoreEntitySet="Work_Shifts">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Shift_Manager" ColumnName="Shift_Manager" />
+          <ScalarProperty Name="Workers__Amount" ColumnName="Workers _Amount" />
+          <ScalarProperty Name="Workindg_Date" ColumnName="Workindg_Date" />
+          <ScalarProperty Name="Id_Work_Shifts" ColumnName="Id_Work_Shifts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers_Gender">
+      <EntityTypeMapping TypeName="Database1Model.Workers_Gender">
+        <MappingFragment StoreEntitySet="Workers_Gender">
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Id_Worker_Gender" ColumnName="Id_Worker_Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

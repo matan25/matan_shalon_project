@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Id_Clients" />
+    </Key>
+    <Property Name="Id_Clients" Type="int" Nullable="false" />
+    <Property Name="company_id" Type="int" Nullable="false" />
+    <Property Name="factory_occupation_id" Type="int" Nullable="false" />
+    <Property Name="Buissnes Priority" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id_Company" />
+    </Key>
+    <Property Name="Id_Company" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="compnay_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="company_country" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="Id_Employee" />
+    </Key>
+    <Property Name="Id_Employee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender_Id" Type="int" Nullable="false" />
+    <Property Name="employee_type_id" Type="int" Nullable="false" />
+    <Property Name="postal_code_id" Type="int" Nullable="false" />
+    <Property Name="deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="employee_type">
+    <Key>
+      <PropertyRef Name="Id_Employee_Type" />
+    </Key>
+    <Property Name="Id_Employee_Type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="salary" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Expends_Report">
+    <Key>
+      <PropertyRef Name="Id_Expends_Report" />
+    </Key>
+    <Property Name="Id_Expends_Report" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="expends_type_id" Type="int" Nullable="false" />
+    <Property Name="note" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="value" Type="int" Nullable="false" />
+    <Property Name="employee_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Expends_Type">
+    <Key>
+      <PropertyRef Name="Id_Expends_Type" />
+    </Key>
+    <Property Name="Id_Expends_Type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Factory_Occupation">
+    <Key>
+      <PropertyRef Name="Id_Factory_Occupation" />
+    </Key>
+    <Property Name="Id_Factory_Occupation" Type="int" Nullable="false" />
+    <Property Name="factory_occupation_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Machines">
+    <Key>
+      <PropertyRef Name="Id_Machines" />
+    </Key>
+    <Property Name="Id_Machines" Type="int" Nullable="false" />
+    <Property Name="kind" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Manufacture_Department" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="work_shifts_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order Details">
+    <Key>
+      <PropertyRef Name="Id_Order_Details" />
+    </Key>
+    <Property Name="Id_Order_Details" Type="int" Nullable="false" />
+    <Property Name="Order Date" Type="datetime" Nullable="false" />
+    <Property Name="Delivery Date" Type="datetime" Nullable="false" />
+    <Property Name="Machines_Id" Type="int" Nullable="false" />
+    <Property Name="production amount" Type="int" Nullable="false" />
+    <Property Name="products_id" Type="int" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id_Orders" />
+    </Key>
+    <Property Name="Id_Orders" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="order details_id" Type="int" Nullable="false" />
+    <Property Name="client_id" Type="int" Nullable="false" />
+    <Property Name="employee_id" Type="int" Nullable="false" />
+    <Property Name="Deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Postal_Code_Worker">
+    <Key>
+      <PropertyRef Name="Id_Postal_Code_Worker" />
+    </Key>
+    <Property Name="Id_Postal_Code_Worker" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="street" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="house_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id_Products" />
+    </Key>
+    <Property Name="Id_Products" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Provided_Products">
+    <Key>
+      <PropertyRef Name="Id_Provided_Products" />
+    </Key>
+    <Property Name="Id_Provided_Products" Type="int" Nullable="false" />
+    <Property Name="product_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="int" Nullable="false" />
+    <Property Name="deleted" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Provider_Details">
+    <Key>
+      <PropertyRef Name="Id_Provider_Details" />
+    </Key>
+    <Property Name="Id_Provider_Details" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="quantity_items" Type="int" Nullable="false" />
+    <Property Name="providing_date" Type="datetime" Nullable="false" />
+    <Property Name="employee_id" Type="int" Nullable="false" />
+    <Property Name="provided_products_id" Type="int" Nullable="false" />
+    <Property Name="provider_name_id" Type="int" Nullable="false" />
+    <Property Name="note" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Provider_Name">
+    <Key>
+      <PropertyRef Name="Id_Provider_Name" />
+    </Key>
+    <Property Name="Id_Provider_Name" Type="int" Nullable="false" />
+    <Property Name="provider_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Work_Shifts">
+    <Key>
+      <PropertyRef Name="Id_Work_Shifts" />
+    </Key>
+    <Property Name="Id_Work_Shifts" Type="int" Nullable="false" />
+    <Property Name="Workindg_Date" Type="datetime" Nullable="false" />
+    <Property Name="Workers _Amount" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Shift_Manager" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Deleted" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Workers_Gender">
+    <Key>
+      <PropertyRef Name="Id_Worker_Gender" />
+    </Key>
+    <Property Name="Id_Worker_Gender" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Clients_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id_Company" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="company_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_Factory_Occupation">
+    <End Role="Factory_Occupation" Type="Self.Factory_Occupation" Multiplicity="1" />
+    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factory_Occupation">
+        <PropertyRef Name="Id_Factory_Occupation" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="factory_occupation_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_employee_employee_type">
+    <End Role="employee_type" Type="Self.employee_type" Multiplicity="1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee_type">
+        <PropertyRef Name="Id_Employee_Type" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="employee_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_employee_Postal_Code_Worker">
+    <End Role="Postal_Code_Worker" Type="Self.Postal_Code_Worker" Multiplicity="1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Postal_Code_Worker">
+        <PropertyRef Name="Id_Postal_Code_Worker" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="postal_code_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_employee_Workers_Gender">
+    <End Role="Workers_Gender" Type="Self.Workers_Gender" Multiplicity="1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers_Gender">
+        <PropertyRef Name="Id_Worker_Gender" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="Gender_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Expends_Report_employee">
+    <End Role="employee" Type="Self.employee" Multiplicity="1" />
+    <End Role="Expends_Report" Type="Self.Expends_Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="Id_Employee" />
+      </Principal>
+      <Dependent Role="Expends_Report">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Expends_Report_Expends_Type">
+    <End Role="Expends_Type" Type="Self.Expends_Type" Multiplicity="1" />
+    <End Role="Expends_Report" Type="Self.Expends_Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expends_Type">
+        <PropertyRef Name="Id_Expends_Type" />
+      </Principal>
+      <Dependent Role="Expends_Report">
+        <PropertyRef Name="expends_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Machines_Work_Shifts">
+    <End Role="Work_Shifts" Type="Self.Work_Shifts" Multiplicity="1" />
+    <End Role="Machines" Type="Self.Machines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Work_Shifts">
+        <PropertyRef Name="Id_Work_Shifts" />
+      </Principal>
+      <Dependent Role="Machines">
+        <PropertyRef Name="work_shifts_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order Details_Machines">
+    <End Role="Machines" Type="Self.Machines" Multiplicity="1" />
+    <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Machines">
+        <PropertyRef Name="Id_Machines" />
+      </Principal>
+      <Dependent Role="Order Details">
+        <PropertyRef Name="Machines_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order Details_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id_Products" />
+      </Principal>
+      <Dependent Role="Order Details">
+        <PropertyRef Name="products_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Clients">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id_Clients" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_employee">
+    <End Role="employee" Type="Self.employee" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="Id_Employee" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Order Details">
+    <End Role="Order Details" Type="Self.Order Details" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order Details">
+        <PropertyRef Name="Id_Order_Details" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="order details_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Provider_Details_employee">
+    <End Role="employee" Type="Self.employee" Multiplicity="1" />
+    <End Role="Provider_Details" Type="Self.Provider_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="Id_Employee" />
+      </Principal>
+      <Dependent Role="Provider_Details">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Provider_Details_Provided_Products">
+    <End Role="Provided_Products" Type="Self.Provided_Products" Multiplicity="1" />
+    <End Role="Provider_Details" Type="Self.Provider_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provided_Products">
+        <PropertyRef Name="Id_Provided_Products" />
+      </Principal>
+      <Dependent Role="Provider_Details">
+        <PropertyRef Name="provided_products_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Provider_Details_Provider_Name">
+    <End Role="Provider_Name" Type="Self.Provider_Name" Multiplicity="1" />
+    <End Role="Provider_Details" Type="Self.Provider_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider_Name">
+        <PropertyRef Name="Id_Provider_Name" />
+      </Principal>
+      <Dependent Role="Provider_Details">
+        <PropertyRef Name="provider_name_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employee_type" EntityType="Self.employee_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expends_Report" EntityType="Self.Expends_Report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expends_Type" EntityType="Self.Expends_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Factory_Occupation" EntityType="Self.Factory_Occupation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Machines" EntityType="Self.Machines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order Details" EntityType="Self.Order Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Postal_Code_Worker" EntityType="Self.Postal_Code_Worker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provided_Products" EntityType="Self.Provided_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provider_Details" EntityType="Self.Provider_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provider_Name" EntityType="Self.Provider_Name" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Work_Shifts" EntityType="Self.Work_Shifts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Workers_Gender" EntityType="Self.Workers_Gender" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Clients_Company" Association="Self.FK_Clients_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_Factory_Occupation" Association="Self.FK_Clients_Factory_Occupation">
+      <End Role="Factory_Occupation" EntitySet="Factory_Occupation" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_employee_employee_type" Association="Self.FK_employee_employee_type">
+      <End Role="employee_type" EntitySet="employee_type" />
+      <End Role="employee" EntitySet="employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_employee_Postal_Code_Worker" Association="Self.FK_employee_Postal_Code_Worker">
+      <End Role="Postal_Code_Worker" EntitySet="Postal_Code_Worker" />
+      <End Role="employee" EntitySet="employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_employee_Workers_Gender" Association="Self.FK_employee_Workers_Gender">
+      <End Role="Workers_Gender" EntitySet="Workers_Gender" />
+      <End Role="employee" EntitySet="employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Expends_Report_employee" Association="Self.FK_Expends_Report_employee">
+      <End Role="employee" EntitySet="employee" />
+      <End Role="Expends_Report" EntitySet="Expends_Report" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Expends_Report_Expends_Type" Association="Self.FK_Expends_Report_Expends_Type">
+      <End Role="Expends_Type" EntitySet="Expends_Type" />
+      <End Role="Expends_Report" EntitySet="Expends_Report" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Machines_Work_Shifts" Association="Self.FK_Machines_Work_Shifts">
+      <End Role="Work_Shifts" EntitySet="Work_Shifts" />
+      <End Role="Machines" EntitySet="Machines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order Details_Machines" Association="Self.FK_Order Details_Machines">
+      <End Role="Machines" EntitySet="Machines" />
+      <End Role="Order Details" EntitySet="Order Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order Details_Products" Association="Self.FK_Order Details_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Order Details" EntitySet="Order Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Clients" Association="Self.FK_Orders_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_employee" Association="Self.FK_Orders_employee">
+      <End Role="employee" EntitySet="employee" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Order Details" Association="Self.FK_Orders_Order Details">
+      <End Role="Order Details" EntitySet="Order Details" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Provider_Details_employee" Association="Self.FK_Provider_Details_employee">
+      <End Role="employee" EntitySet="employee" />
+      <End Role="Provider_Details" EntitySet="Provider_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Provider_Details_Provided_Products" Association="Self.FK_Provider_Details_Provided_Products">
+      <End Role="Provided_Products" EntitySet="Provided_Products" />
+      <End Role="Provider_Details" EntitySet="Provider_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Provider_Details_Provider_Name" Association="Self.FK_Provider_Details_Provider_Name">
+      <End Role="Provider_Name" EntitySet="Provider_Name" />
+      <End Role="Provider_Details" EntitySet="Provider_Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
